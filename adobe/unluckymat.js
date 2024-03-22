@@ -11,8 +11,8 @@ lib.ssMetadata = [
 		{name:"unluckymat_atlas_6", frames: [[0,0,1224,1299]]},
 		{name:"unluckymat_atlas_7", frames: [[1130,0,745,1226],[0,0,1128,828],[0,1228,1238,564]]},
 		{name:"unluckymat_atlas_8", frames: [[1926,1347,117,160],[1605,309,430,430],[897,1389,406,150],[1643,0,367,199],[610,0,399,498],[1810,1347,114,178],[480,774,88,61],[982,1056,623,196],[1607,1056,411,289],[644,633,664,244],[1011,309,592,322],[1011,0,630,307],[644,500,239,116],[1292,1682,288,169],[1036,879,263,147],[1582,1682,284,158],[0,1551,630,120],[0,500,642,272],[897,1541,393,151],[0,339,399,158],[172,1421,174,75],[1821,898,208,143],[1461,1347,347,333],[1440,633,123,75],[1821,741,208,155],[378,1033,602,228],[0,774,478,91],[401,339,175,119],[1522,1254,59,48],[885,500,98,107],[1310,741,509,313],[0,1747,478,91],[0,1421,170,111],[172,1498,59,47],[1565,633,37,101],[1926,1509,69,117],[1643,201,307,80],[570,774,54,95],[378,1263,1081,124],[1461,1254,59,52],[1952,201,92,83],[1310,633,128,104],[1305,1389,99,138],[378,1389,517,160],[0,0,608,337],[0,879,1034,152],[0,1033,376,386],[0,1694,971,51]]},
-		{name:"unluckymat_atlas_9", frames: [[0,1059,830,501],[0,1563,1112,403],[0,0,1009,559],[0,561,967,496],[1114,1563,920,459],[1011,0,666,532],[969,561,463,1000],[1434,534,510,670]]},
-		{name:"unluckymat_atlas_10", frames: [[752,1053,650,364],[1329,1419,710,310],[654,0,765,346],[0,1181,368,794],[1404,1053,644,326],[0,491,450,688],[1421,0,507,519],[370,1181,380,630],[752,1419,575,394],[0,0,652,489],[452,491,473,530],[927,348,473,530],[1402,521,473,530]]},
+		{name:"unluckymat_atlas_9", frames: [[752,1053,650,364],[1329,1419,710,310],[654,0,765,346],[0,1181,368,794],[1404,1053,644,326],[0,491,450,688],[1421,0,507,519],[370,1181,380,630],[752,1419,575,394],[0,0,652,489],[452,491,473,530],[927,348,473,530],[1402,521,473,530]]},
+		{name:"unluckymat_atlas_10", frames: [[0,1059,830,501],[0,1563,1112,403],[0,0,1009,559],[0,561,967,496],[1114,1563,920,459],[1011,0,666,532],[969,561,463,1000],[1434,534,510,670]]},
 		{name:"unluckymat_atlas_11", frames: [[1284,962,609,986],[0,0,640,960],[0,962,640,960],[642,0,640,960],[1284,0,640,960],[642,962,640,960]]}
 ];
 
@@ -44,8 +44,8 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_76 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+(lib.CachedBmp_104 = function() {
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
@@ -101,14 +101,14 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_67 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.CachedBmp_66 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
@@ -122,7 +122,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_64 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
@@ -177,7 +177,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_56 = function() {
+(lib.CachedBmp_103 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(13);
 }).prototype = p = new cjs.Sprite();
@@ -199,14 +199,14 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_53 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.CachedBmp_52 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
@@ -233,7 +233,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_48 = function() {
+(lib.CachedBmp_102 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(17);
 }).prototype = p = new cjs.Sprite();
@@ -241,7 +241,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_47 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
@@ -269,7 +269,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_43 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
@@ -289,7 +289,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_40 = function() {
+(lib.CachedBmp_101 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(21);
 }).prototype = p = new cjs.Sprite();
@@ -310,7 +310,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_37 = function() {
+(lib.CachedBmp_100 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(24);
 }).prototype = p = new cjs.Sprite();
@@ -324,8 +324,8 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_35 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+(lib.CachedBmp_99 = function() {
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
 
@@ -338,7 +338,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_89 = function() {
+(lib.CachedBmp_131 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(26);
 }).prototype = p = new cjs.Sprite();
@@ -346,7 +346,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_32 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
@@ -367,14 +367,14 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_29 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.CachedBmp_28 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
@@ -395,20 +395,20 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_25 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.CachedBmp_24 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_88 = function() {
+(lib.CachedBmp_130 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(31);
 }).prototype = p = new cjs.Sprite();
@@ -436,7 +436,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_87 = function() {
+(lib.CachedBmp_129 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(35);
 }).prototype = p = new cjs.Sprite();
@@ -451,7 +451,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_17 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(8);
 }).prototype = p = new cjs.Sprite();
 
@@ -465,7 +465,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_15 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(9);
 }).prototype = p = new cjs.Sprite();
 
@@ -514,7 +514,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_8 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
@@ -556,7 +556,7 @@ lib.ssMetadata = [
 
 
 (lib.CachedBmp_2 = function() {
-	this.initialize(ss["unluckymat_atlas_9"]);
+	this.initialize(ss["unluckymat_atlas_10"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
@@ -598,7 +598,7 @@ lib.ssMetadata = [
 
 
 (lib.Image_4 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(10);
 }).prototype = p = new cjs.Sprite();
 
@@ -612,14 +612,14 @@ lib.ssMetadata = [
 
 
 (lib.Image_0 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(11);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.Image_0_1 = function() {
-	this.initialize(ss["unluckymat_atlas_10"]);
+	this.initialize(ss["unluckymat_atlas_9"]);
 	this.gotoAndStop(12);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
@@ -734,7 +734,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_77();
 	this.instance.setTransform(251.5,25.15,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_76();
+	this.instance_1 = new lib.CachedBmp_104();
 	this.instance_1.setTransform(0.5,0.5,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -1410,7 +1410,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_57();
 	this.instance.setTransform(13.95,0,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_56();
+	this.instance_1 = new lib.CachedBmp_103();
 	this.instance_1.setTransform(0,0.35,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -1578,7 +1578,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_49();
 	this.instance.setTransform(1.5,16.15,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_48();
+	this.instance_1 = new lib.CachedBmp_102();
 	this.instance_1.setTransform(0,0,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -1787,7 +1787,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_41();
 	this.instance.setTransform(9.1,26.1,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_40();
+	this.instance_1 = new lib.CachedBmp_101();
 	this.instance_1.setTransform(0.5,0,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -1884,7 +1884,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_38();
 	this.instance.setTransform(21.7,8.05,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_37();
+	this.instance_1 = new lib.CachedBmp_100();
 	this.instance_1.setTransform(0.5,0.5,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -1909,7 +1909,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_36();
 	this.instance.setTransform(13.65,5.1,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_35();
+	this.instance_1 = new lib.CachedBmp_99();
 	this.instance_1.setTransform(0.5,0.5,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -3429,7 +3429,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_1 = new lib.ClipGroup();
 	this.instance_1.setTransform(285.75,269.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_2 = new lib.CachedBmp_89();
+	this.instance_2 = new lib.CachedBmp_131();
 	this.instance_2.setTransform(0.5,339.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -3487,7 +3487,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_2 = new lib.ClipGroup_1();
 	this.instance_2.setTransform(284.75,265.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_3 = new lib.CachedBmp_88();
+	this.instance_3 = new lib.CachedBmp_130();
 	this.instance_3.setTransform(-0.5,335.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
@@ -3550,7 +3550,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_6.setTransform(109.95,54.25,1,1,0,0,0,14.1,13.5);
 	this.instance_6.alpha = 0.4688;
 
-	this.instance_7 = new lib.CachedBmp_87();
+	this.instance_7 = new lib.CachedBmp_129();
 	this.instance_7.setTransform(99.3,51.25,0.5,0.5);
 
 	this.instance_8 = new lib.CachedBmp_18();
@@ -3781,34 +3781,35 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// title
-	this.instance = new lib.title();
-	this.instance.setTransform(309.7,-75.4,1,1,0,0,0,258.6,38.1);
+	this.title = new lib.title();
+	this.title.name = "title";
+	this.title.setTransform(309.7,-75.4,1,1,0,0,0,258.6,38.1);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({y:138.4},50).wait(50));
+	this.timeline.addTween(cjs.Tween.get(this.title).to({y:138.4},50).wait(50));
 
 	// credits
-	this.instance_1 = new lib.credits();
-	this.instance_1.setTransform(303.25,884.8,1,1,0,0,0,242.7,12.8);
+	this.instance = new lib.credits();
+	this.instance.setTransform(303.25,884.8,1,1,0,0,0,242.7,12.8);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).to({x:302.3,y:719.8},50).wait(50));
+	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:302.3,y:719.8},50).wait(50));
 
 	// scooter
-	this.instance_2 = new lib.scooter();
-	this.instance_2.setTransform(178.45,559.2,1,1,0,0,0,93.5,95.9);
+	this.instance_1 = new lib.scooter();
+	this.instance_1.setTransform(178.45,559.2,1,1,0,0,0,93.5,95.9);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(100));
+
+	// mat
+	this.instance_2 = new lib.mat_8();
+	this.instance_2.setTransform(418.95,391.1,1,1,0,0,0,127,166.6);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(100));
 
-	// mat
-	this.instance_3 = new lib.mat_8();
-	this.instance_3.setTransform(418.95,391.1,1,1,0,0,0,127,166.6);
+	// _Image_
+	this.instance_3 = new lib.Image();
+	this.instance_3.setTransform(0.1,0,0.9571,0.8289);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(100));
-
-	// _Image_
-	this.instance_4 = new lib.Image();
-	this.instance_4.setTransform(0.1,0,0.9571,0.8289);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(100));
 
 	// Layer_13
 	this.shape = new cjs.Shape();
@@ -3949,6 +3950,19 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	this.actionFrames = [0];
+	// timeline functions:
+	this.frame_0 = function() {
+		function playF(){
+		createjs.Sound.play("soundID"); 
+		} 
+		// load and register sound   
+		createjs.Sound.registerSound("audio_BACKGROUND TRACK.wav", "soundID");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1236));
+
 	// Layer_1
 	this.instance = new lib.TITLECARDai();
 	this.instance.setTransform(297.05,392.05,1,1,0,0,0,306.4,392.1);
@@ -3983,7 +3997,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_10 = new lib._12ai();
 	this.instance_10.setTransform(300.4,396,1,1,0,0,0,306,396);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},99).to({state:[{t:this.instance_2}]},100).to({state:[{t:this.instance_3}]},75).to({state:[{t:this.instance_4}]},129).to({state:[{t:this.instance_5}]},161).to({state:[{t:this.instance_6}]},90).to({state:[{t:this.instance_7}]},120).to({state:[{t:this.instance_8}]},120).to({state:[{t:this.instance_9}]},100).to({state:[{t:this.instance_10}]},121).wait(121));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance}]},14).to({state:[{t:this.instance_1}]},85).to({state:[{t:this.instance_2}]},100).to({state:[{t:this.instance_3}]},75).to({state:[{t:this.instance_4}]},129).to({state:[{t:this.instance_5}]},161).to({state:[{t:this.instance_6}]},90).to({state:[{t:this.instance_7}]},120).to({state:[{t:this.instance_8}]},120).to({state:[{t:this.instance_9}]},100).to({state:[{t:this.instance_10}]},121).wait(121));
 	this.instance_6.addEventListener("tick", AdobeAn.handleFilterCache);
 	this.instance_7.addEventListener("tick", AdobeAn.handleFilterCache);
 
@@ -4000,17 +4014,17 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/unluckymat_atlas_1.png?1710976118576", id:"unluckymat_atlas_1"},
-		{src:"images/unluckymat_atlas_2.png?1710976118576", id:"unluckymat_atlas_2"},
-		{src:"images/unluckymat_atlas_3.png?1710976118576", id:"unluckymat_atlas_3"},
-		{src:"images/unluckymat_atlas_4.png?1710976118576", id:"unluckymat_atlas_4"},
-		{src:"images/unluckymat_atlas_5.png?1710976118576", id:"unluckymat_atlas_5"},
-		{src:"images/unluckymat_atlas_6.png?1710976118576", id:"unluckymat_atlas_6"},
-		{src:"images/unluckymat_atlas_7.png?1710976118577", id:"unluckymat_atlas_7"},
-		{src:"images/unluckymat_atlas_8.png?1710976118578", id:"unluckymat_atlas_8"},
-		{src:"images/unluckymat_atlas_9.png?1710976118578", id:"unluckymat_atlas_9"},
-		{src:"images/unluckymat_atlas_10.png?1710976118579", id:"unluckymat_atlas_10"},
-		{src:"images/unluckymat_atlas_11.png?1710976118579", id:"unluckymat_atlas_11"}
+		{src:"images/unluckymat_atlas_1.png?1711071383783", id:"unluckymat_atlas_1"},
+		{src:"images/unluckymat_atlas_2.png?1711071383783", id:"unluckymat_atlas_2"},
+		{src:"images/unluckymat_atlas_3.png?1711071383784", id:"unluckymat_atlas_3"},
+		{src:"images/unluckymat_atlas_4.png?1711071383784", id:"unluckymat_atlas_4"},
+		{src:"images/unluckymat_atlas_5.png?1711071383784", id:"unluckymat_atlas_5"},
+		{src:"images/unluckymat_atlas_6.png?1711071383784", id:"unluckymat_atlas_6"},
+		{src:"images/unluckymat_atlas_7.png?1711071383784", id:"unluckymat_atlas_7"},
+		{src:"images/unluckymat_atlas_8.png?1711071383785", id:"unluckymat_atlas_8"},
+		{src:"images/unluckymat_atlas_9.png?1711071383786", id:"unluckymat_atlas_9"},
+		{src:"images/unluckymat_atlas_10.png?1711071383786", id:"unluckymat_atlas_10"},
+		{src:"images/unluckymat_atlas_11.png?1711071383786", id:"unluckymat_atlas_11"}
 	],
 	preloads: []
 };
