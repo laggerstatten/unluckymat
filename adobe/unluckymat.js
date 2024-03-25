@@ -20,17 +20,131 @@ lib.ssMetadata = [
 (lib.AnMovieClip = function(){
 	this.actionFrames = [];
 	this.ignorePause = false;
+	this.currentSoundStreamInMovieclip;
+	this.soundStreamDuration = new Map();
+	this.streamSoundSymbolsList = [];
+
+	this.gotoAndPlayForStreamSoundSync = function(positionOrLabel){
+		cjs.MovieClip.prototype.gotoAndPlay.call(this,positionOrLabel);
+	}
 	this.gotoAndPlay = function(positionOrLabel){
+		this.clearAllSoundStreams();
+		var pos = this.timeline.resolve(positionOrLabel);
+		if (pos != null) { this.startStreamSoundsForTargetedFrame(pos); }
 		cjs.MovieClip.prototype.gotoAndPlay.call(this,positionOrLabel);
 	}
 	this.play = function(){
+		this.clearAllSoundStreams();
+		this.startStreamSoundsForTargetedFrame(this.currentFrame);
 		cjs.MovieClip.prototype.play.call(this);
 	}
 	this.gotoAndStop = function(positionOrLabel){
 		cjs.MovieClip.prototype.gotoAndStop.call(this,positionOrLabel);
+		this.clearAllSoundStreams();
 	}
 	this.stop = function(){
 		cjs.MovieClip.prototype.stop.call(this);
+		this.clearAllSoundStreams();
+	}
+	this.startStreamSoundsForTargetedFrame = function(targetFrame){
+		for(var index=0; index<this.streamSoundSymbolsList.length; index++){
+			if(index <= targetFrame && this.streamSoundSymbolsList[index] != undefined){
+				for(var i=0; i<this.streamSoundSymbolsList[index].length; i++){
+					var sound = this.streamSoundSymbolsList[index][i];
+					if(sound.endFrame > targetFrame){
+						var targetPosition = Math.abs((((targetFrame - sound.startFrame)/lib.properties.fps) * 1000));
+						var instance = playSound(sound.id);
+						var remainingLoop = 0;
+						if(sound.offset){
+							targetPosition = targetPosition + sound.offset;
+						}
+						else if(sound.loop > 1){
+							var loop = targetPosition /instance.duration;
+							remainingLoop = Math.floor(sound.loop - loop);
+							if(targetPosition == 0){ remainingLoop -= 1; }
+							targetPosition = targetPosition % instance.duration;
+						}
+						instance.loop = remainingLoop;
+						instance.position = Math.round(targetPosition);
+						this.InsertIntoSoundStreamData(instance, sound.startFrame, sound.endFrame, sound.loop , sound.offset);
+					}
+				}
+			}
+		}
+	}
+	this.InsertIntoSoundStreamData = function(soundInstance, startIndex, endIndex, loopValue, offsetValue){ 
+ 		this.soundStreamDuration.set({instance:soundInstance}, {start: startIndex, end:endIndex, loop:loopValue, offset:offsetValue});
+	}
+	this.clearAllSoundStreams = function(){
+		this.soundStreamDuration.forEach(function(value,key){
+			key.instance.stop();
+		});
+ 		this.soundStreamDuration.clear();
+		this.currentSoundStreamInMovieclip = undefined;
+	}
+	this.stopSoundStreams = function(currentFrame){
+		if(this.soundStreamDuration.size > 0){
+			var _this = this;
+			this.soundStreamDuration.forEach(function(value,key,arr){
+				if((value.end) == currentFrame){
+					key.instance.stop();
+					if(_this.currentSoundStreamInMovieclip == key) { _this.currentSoundStreamInMovieclip = undefined; }
+					arr.delete(key);
+				}
+			});
+		}
+	}
+
+	this.computeCurrentSoundStreamInstance = function(currentFrame){
+		if(this.currentSoundStreamInMovieclip == undefined){
+			var _this = this;
+			if(this.soundStreamDuration.size > 0){
+				var maxDuration = 0;
+				this.soundStreamDuration.forEach(function(value,key){
+					if(value.end > maxDuration){
+						maxDuration = value.end;
+						_this.currentSoundStreamInMovieclip = key;
+					}
+				});
+			}
+		}
+	}
+	this.getDesiredFrame = function(currentFrame, calculatedDesiredFrame){
+		for(var frameIndex in this.actionFrames){
+			if((frameIndex > currentFrame) && (frameIndex < calculatedDesiredFrame)){
+				return frameIndex;
+			}
+		}
+		return calculatedDesiredFrame;
+	}
+
+	this.syncStreamSounds = function(){
+		this.stopSoundStreams(this.currentFrame);
+		this.computeCurrentSoundStreamInstance(this.currentFrame);
+		if(this.currentSoundStreamInMovieclip != undefined){
+			var soundInstance = this.currentSoundStreamInMovieclip.instance;
+			if(soundInstance.position != 0){
+				var soundValue = this.soundStreamDuration.get(this.currentSoundStreamInMovieclip);
+				var soundPosition = (soundValue.offset?(soundInstance.position - soundValue.offset): soundInstance.position);
+				var calculatedDesiredFrame = (soundValue.start)+((soundPosition/1000) * lib.properties.fps);
+				if(soundValue.loop > 1){
+					calculatedDesiredFrame +=(((((soundValue.loop - soundInstance.loop -1)*soundInstance.duration)) / 1000) * lib.properties.fps);
+				}
+				calculatedDesiredFrame = Math.floor(calculatedDesiredFrame);
+				var deltaFrame = calculatedDesiredFrame - this.currentFrame;
+				if((deltaFrame >= 0) && this.ignorePause){
+					cjs.MovieClip.prototype.play.call(this);
+					this.ignorePause = false;
+				}
+				else if(deltaFrame >= 2){
+					this.gotoAndPlayForStreamSoundSync(this.getDesiredFrame(this.currentFrame,calculatedDesiredFrame));
+				}
+				else if(deltaFrame <= -2){
+					cjs.MovieClip.prototype.stop.call(this);
+					this.ignorePause = true;
+				}
+			}
+		}
 	}
 }).prototype = p = new cjs.MovieClip();
 // symbols:
@@ -338,7 +452,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_131 = function() {
+(lib.CachedBmp_140 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(26);
 }).prototype = p = new cjs.Sprite();
@@ -408,7 +522,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_130 = function() {
+(lib.CachedBmp_139 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(31);
 }).prototype = p = new cjs.Sprite();
@@ -436,7 +550,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_129 = function() {
+(lib.CachedBmp_138 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(35);
 }).prototype = p = new cjs.Sprite();
@@ -3429,7 +3543,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_1 = new lib.ClipGroup();
 	this.instance_1.setTransform(285.75,269.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_2 = new lib.CachedBmp_131();
+	this.instance_2 = new lib.CachedBmp_140();
 	this.instance_2.setTransform(0.5,339.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -3487,7 +3601,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_2 = new lib.ClipGroup_1();
 	this.instance_2.setTransform(284.75,265.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_3 = new lib.CachedBmp_130();
+	this.instance_3 = new lib.CachedBmp_139();
 	this.instance_3.setTransform(-0.5,335.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
@@ -3550,7 +3664,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_6.setTransform(109.95,54.25,1,1,0,0,0,14.1,13.5);
 	this.instance_6.alpha = 0.4688;
 
-	this.instance_7 = new lib.CachedBmp_129();
+	this.instance_7 = new lib.CachedBmp_138();
 	this.instance_7.setTransform(99.3,51.25,0.5,0.5);
 
 	this.instance_8 = new lib.CachedBmp_18();
@@ -3950,18 +4064,21 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	this.actionFrames = [0];
+	this.actionFrames = [0,1235];
+	this.streamSoundSymbolsList[0] = [{id:"audio_BACKGROUNDTRACKwav",startFrame:0,endFrame:1235,loop:1,offset:0}];
 	// timeline functions:
 	this.frame_0 = function() {
-		function playF(){
-		createjs.Sound.play("soundID"); 
-		} 
-		// load and register sound   
-		createjs.Sound.registerSound("audio_BACKGROUND TRACK.wav", "soundID");
+		this.clearAllSoundStreams();
+		 
+		var soundInstance = playSound("audio_BACKGROUNDTRACKwav",0);
+		this.InsertIntoSoundStreamData(soundInstance,0,1235,1);
+	}
+	this.frame_1235 = function() {
+		playSound("audio_BACKGROUNDTRACKwav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1236));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1235).call(this.frame_1235).wait(1));
 
 	// Layer_1
 	this.instance = new lib.TITLECARDai();
@@ -3997,14 +4114,14 @@ if (reversed == null) { reversed = false; }
 	this.instance_10 = new lib._12ai();
 	this.instance_10.setTransform(300.4,396,1,1,0,0,0,306,396);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance}]},14).to({state:[{t:this.instance_1}]},85).to({state:[{t:this.instance_2}]},100).to({state:[{t:this.instance_3}]},75).to({state:[{t:this.instance_4}]},129).to({state:[{t:this.instance_5}]},161).to({state:[{t:this.instance_6}]},90).to({state:[{t:this.instance_7}]},120).to({state:[{t:this.instance_8}]},120).to({state:[{t:this.instance_9}]},100).to({state:[{t:this.instance_10}]},121).wait(121));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance_1}]},85).to({state:[{t:this.instance_2}]},100).to({state:[{t:this.instance_3}]},75).to({state:[{t:this.instance_4}]},129).to({state:[{t:this.instance_5}]},161).to({state:[{t:this.instance_6}]},90).to({state:[{t:this.instance_7}]},120).to({state:[{t:this.instance_8}]},120).to({state:[{t:this.instance_9}]},100).to({state:[{t:this.instance_10}]},121).to({state:[]},121).wait(13));
 	this.instance_6.addEventListener("tick", AdobeAn.handleFilterCache);
 	this.instance_7.addEventListener("tick", AdobeAn.handleFilterCache);
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(76.2,181,1121.6,716.5);
+p.nominalBounds = new cjs.Rectangle(0,0,1197.8,897.5);
 // library properties:
 lib.properties = {
 	id: '37723C9EECAD514CA4B96462B3AEF8DF',
@@ -4014,17 +4131,18 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/unluckymat_atlas_1.png?1711071383783", id:"unluckymat_atlas_1"},
-		{src:"images/unluckymat_atlas_2.png?1711071383783", id:"unluckymat_atlas_2"},
-		{src:"images/unluckymat_atlas_3.png?1711071383784", id:"unluckymat_atlas_3"},
-		{src:"images/unluckymat_atlas_4.png?1711071383784", id:"unluckymat_atlas_4"},
-		{src:"images/unluckymat_atlas_5.png?1711071383784", id:"unluckymat_atlas_5"},
-		{src:"images/unluckymat_atlas_6.png?1711071383784", id:"unluckymat_atlas_6"},
-		{src:"images/unluckymat_atlas_7.png?1711071383784", id:"unluckymat_atlas_7"},
-		{src:"images/unluckymat_atlas_8.png?1711071383785", id:"unluckymat_atlas_8"},
-		{src:"images/unluckymat_atlas_9.png?1711071383786", id:"unluckymat_atlas_9"},
-		{src:"images/unluckymat_atlas_10.png?1711071383786", id:"unluckymat_atlas_10"},
-		{src:"images/unluckymat_atlas_11.png?1711071383786", id:"unluckymat_atlas_11"}
+		{src:"images/unluckymat_atlas_1.png?1711391720977", id:"unluckymat_atlas_1"},
+		{src:"images/unluckymat_atlas_2.png?1711391720977", id:"unluckymat_atlas_2"},
+		{src:"images/unluckymat_atlas_3.png?1711391720977", id:"unluckymat_atlas_3"},
+		{src:"images/unluckymat_atlas_4.png?1711391720977", id:"unluckymat_atlas_4"},
+		{src:"images/unluckymat_atlas_5.png?1711391720977", id:"unluckymat_atlas_5"},
+		{src:"images/unluckymat_atlas_6.png?1711391720977", id:"unluckymat_atlas_6"},
+		{src:"images/unluckymat_atlas_7.png?1711391720977", id:"unluckymat_atlas_7"},
+		{src:"images/unluckymat_atlas_8.png?1711391720979", id:"unluckymat_atlas_8"},
+		{src:"images/unluckymat_atlas_9.png?1711391720979", id:"unluckymat_atlas_9"},
+		{src:"images/unluckymat_atlas_10.png?1711391720980", id:"unluckymat_atlas_10"},
+		{src:"images/unluckymat_atlas_11.png?1711391720980", id:"unluckymat_atlas_11"},
+		{src:"sounds/audio_BACKGROUNDTRACKwav.mp3?1711391721128", id:"audio_BACKGROUNDTRACKwav"}
 	],
 	preloads: []
 };
