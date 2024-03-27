@@ -345,7 +345,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_84 = function() {
+(lib.CachedBmp_90 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(27);
 }).prototype = p = new cjs.Sprite();
@@ -415,7 +415,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_83 = function() {
+(lib.CachedBmp_89 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(32);
 }).prototype = p = new cjs.Sprite();
@@ -443,7 +443,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_82 = function() {
+(lib.CachedBmp_88 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(36);
 }).prototype = p = new cjs.Sprite();
@@ -3466,7 +3466,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_1 = new lib.ClipGroup();
 	this.instance_1.setTransform(285.75,269.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_2 = new lib.CachedBmp_84();
+	this.instance_2 = new lib.CachedBmp_90();
 	this.instance_2.setTransform(0.5,339.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -3524,7 +3524,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_2 = new lib.ClipGroup_1();
 	this.instance_2.setTransform(284.75,265.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_3 = new lib.CachedBmp_83();
+	this.instance_3 = new lib.CachedBmp_89();
 	this.instance_3.setTransform(-0.5,335.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
@@ -3587,7 +3587,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_6.setTransform(109.95,54.25,1,1,0,0,0,14.1,13.5);
 	this.instance_6.alpha = 0.4688;
 
-	this.instance_7 = new lib.CachedBmp_82();
+	this.instance_7 = new lib.CachedBmp_88();
 	this.instance_7.setTransform(99.3,51.25,0.5,0.5);
 
 	this.instance_8 = new lib.CachedBmp_18();
@@ -3761,6 +3761,14 @@ if (reversed == null) { reversed = false; }
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
+
+	// timeline functions:
+	this.frame_1 = function() {
+		playSound("audio_MORSENOTIFwav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(1).call(this.frame_1).wait(99));
 
 	// bubble
 	this.instance = new lib.bubble_2();
@@ -4070,7 +4078,7 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.btn_play).wait(78).to({_off:false},0).to({_off:true},1).wait(1153));
 
 	// Layer_1
-	this.instance = new lib.FIRSTai("synched",0);
+	this.instance = new lib.FIRSTai();
 	this.instance.setTransform(299.45,395.5,1,1,0,0,0,306.9,396.7);
 
 	this.instance_1 = new lib.Twoweekslaterai();
@@ -4079,7 +4087,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_2 = new lib._4_5_();
 	this.instance_2.setTransform(600.25,790.9,1,1,0,0,0,306.7,397.9);
 
-	this.instance_3 = new lib._6ai("synched",0);
+	this.instance_3 = new lib._6ai();
 	this.instance_3.setTransform(291.8,396,1,1,0,0,0,309.4,396.2);
 
 	this.instance_4 = new lib._7ai();
@@ -4137,7 +4145,8 @@ lib.properties = {
 		{src:"images/unluckymat_atlas_9.png", id:"unluckymat_atlas_9"},
 		{src:"images/unluckymat_atlas_10.png", id:"unluckymat_atlas_10"},
 		{src:"images/unluckymat_atlas_11.png", id:"unluckymat_atlas_11"},
-		{src:"sounds/audio_BACKGROUNDTRACK_shortwav.mp3", id:"audio_BACKGROUNDTRACK_shortwav"}
+		{src:"sounds/audio_BACKGROUNDTRACK_shortwav.mp3", id:"audio_BACKGROUNDTRACK_shortwav"},
+		{src:"sounds/audio_MORSENOTIFwav.mp3", id:"audio_MORSENOTIFwav"}
 	],
 	preloads: []
 };
