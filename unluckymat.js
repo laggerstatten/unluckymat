@@ -345,7 +345,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_90 = function() {
+(lib.CachedBmp_81 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(27);
 }).prototype = p = new cjs.Sprite();
@@ -415,7 +415,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_89 = function() {
+(lib.CachedBmp_80 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(32);
 }).prototype = p = new cjs.Sprite();
@@ -443,7 +443,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_88 = function() {
+(lib.CachedBmp_79 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(36);
 }).prototype = p = new cjs.Sprite();
@@ -2704,6 +2704,14 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// timeline functions:
+	this.frame_0 = function() {
+		playSound("audio_incoming_asteroid_shortwav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(120));
+
 	// asteroid
 	this.instance = new lib.asteroid();
 	this.instance.setTransform(-107.65,-107.5,1,1,0,0,0,107.6,107.5);
@@ -2879,6 +2887,14 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// timeline functions:
+	this.frame_27 = function() {
+		playSound("audio_SINGLENOTIFICATIONwav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(27).call(this.frame_27).wait(73));
+
 	// ad
 	this.instance = new lib.ad();
 	this.instance.setTransform(378.3,689.85,0.0041,0.0041,0,0,0,270,490.9);
@@ -2969,6 +2985,23 @@ if (reversed == null) { reversed = false; }
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
+
+	// timeline functions:
+	this.frame_0 = function() {
+		playSound("audio_SPRINGNOTIFwav");
+	}
+	this.frame_14 = function() {
+		playSound("audio_SPRINGNOTIFwav");
+	}
+	this.frame_29 = function() {
+		playSound("audio_SPRINGNOTIFwav");
+	}
+	this.frame_44 = function() {
+		playSound("audio_SPRINGNOTIFwav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(14).call(this.frame_14).wait(15).call(this.frame_29).wait(15).call(this.frame_44).wait(76));
 
 	// rrrr
 	this.instance = new lib.rrrr();
@@ -3121,6 +3154,14 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// timeline functions:
+	this.frame_0 = function() {
+		playSound("talking_justgreat_1wav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(120));
+
 	// bubble
 	this.instance = new lib.bubble();
 	this.instance.setTransform(131,515.8,1,1,0,0,0,72,42.3);
@@ -3256,6 +3297,14 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// timeline functions:
+	this.frame_34 = function() {
+		playSound("talking_myscooter_1wav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(34).call(this.frame_34).wait(56));
+
 	// regret
 	this.instance = new lib.regret();
 	this.instance.setTransform(311.6,179.95,1,1,0,0,0,70.9,43.8);
@@ -3385,6 +3434,20 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// timeline functions:
+	this.frame_0 = function() {
+		playSound("talking_huh_1wav");
+	}
+	this.frame_43 = function() {
+		playSound("talking_somethingdestroyed_1wav");
+	}
+	this.frame_135 = function() {
+		playSound("talking_wait_1wav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(43).call(this.frame_43).wait(92).call(this.frame_135).wait(25));
+
 	// huh
 	this.instance = new lib.huh();
 	this.instance.setTransform(80.85,165.45,0.1975,0.1975,0,0,0,52.4,78.2);
@@ -3396,14 +3459,14 @@ if (reversed == null) { reversed = false; }
 	this.instance_1.setTransform(263,202.45,0.0646,0.0646,0,0,0,50.3,164);
 	this.instance_1._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(44).to({_off:false},0).to({regX:49.5,regY:161.8,scaleX:1,scaleY:1,x:262,y:200.45},10).wait(50).to({regX:48.5,regY:162.8,x:261,y:201.45},0).to({regX:48.6,regY:162.2,scaleX:0.0422,scaleY:0.0422,x:261.05,y:201.4},9).to({_off:true},1).wait(46));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(44).to({_off:false},0).to({regX:49.5,regY:161.8,scaleX:1,scaleY:1,x:262,y:200.45},10).wait(53).to({regX:48.5,regY:162.8,x:261,y:201.45},0).to({regX:48.6,regY:162.2,scaleX:0.0422,scaleY:0.0422,x:261.05,y:201.4},9).to({_off:true},1).wait(43));
 
 	// wait
 	this.instance_2 = new lib.wait();
 	this.instance_2.setTransform(66.85,329.35,0.1634,0.1634,0,0,0,52.3,0);
 	this.instance_2._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(114).to({_off:false},0).to({regX:52.4,scaleX:1,scaleY:1},10).wait(25).to({scaleX:0.1051,scaleY:0.1051},10).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(118).to({_off:false},0).to({regX:52.4,scaleX:1,scaleY:1},10).wait(21).to({scaleX:0.1051,scaleY:0.1051},10).wait(1));
 
 	// wreck
 	this.instance_3 = new lib.wreck_3();
@@ -3466,7 +3529,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_1 = new lib.ClipGroup();
 	this.instance_1.setTransform(285.75,269.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_2 = new lib.CachedBmp_90();
+	this.instance_2 = new lib.CachedBmp_81();
 	this.instance_2.setTransform(0.5,339.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -3524,7 +3587,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_2 = new lib.ClipGroup_1();
 	this.instance_2.setTransform(284.75,265.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_3 = new lib.CachedBmp_89();
+	this.instance_3 = new lib.CachedBmp_80();
 	this.instance_3.setTransform(-0.5,335.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
@@ -3587,7 +3650,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_6.setTransform(109.95,54.25,1,1,0,0,0,14.1,13.5);
 	this.instance_6.alpha = 0.4688;
 
-	this.instance_7 = new lib.CachedBmp_88();
+	this.instance_7 = new lib.CachedBmp_79();
 	this.instance_7.setTransform(99.3,51.25,0.5,0.5);
 
 	this.instance_8 = new lib.CachedBmp_18();
@@ -3766,9 +3829,12 @@ if (reversed == null) { reversed = false; }
 	this.frame_1 = function() {
 		playSound("audio_MORSENOTIFwav");
 	}
+	this.frame_30 = function() {
+		playSound("talking_wantascooter_1wav");
+	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(1).call(this.frame_1).wait(99));
+	this.timeline.addTween(cjs.Tween.get(this).wait(1).call(this.frame_1).wait(29).call(this.frame_30).wait(70));
 
 	// bubble
 	this.instance = new lib.bubble_2();
@@ -3940,6 +4006,26 @@ if (reversed == null) { reversed = false; }
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
+
+	// timeline functions:
+	this.frame_0 = function() {
+		playSound("audio_SPRINGNOTIFwav");
+	}
+	this.frame_13 = function() {
+		playSound("audio_SPRINGNOTIFwav");
+	}
+	this.frame_34 = function() {
+		playSound("audio_INCOMINGASTEROIDwav");
+	}
+	this.frame_52 = function() {
+		playSound("talking_whatinthemotherboard_1wav");
+	}
+	this.frame_59 = function() {
+		playSound("audio_ASTEROIDCRASHwav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(13).call(this.frame_13).wait(21).call(this.frame_34).wait(18).call(this.frame_52).wait(7).call(this.frame_59).wait(71));
 
 	// bubble
 	this.instance = new lib.bubble_1();
@@ -4145,8 +4231,20 @@ lib.properties = {
 		{src:"images/unluckymat_atlas_9.png", id:"unluckymat_atlas_9"},
 		{src:"images/unluckymat_atlas_10.png", id:"unluckymat_atlas_10"},
 		{src:"images/unluckymat_atlas_11.png", id:"unluckymat_atlas_11"},
+		{src:"sounds/audio_ASTEROIDCRASHwav.mp3", id:"audio_ASTEROIDCRASHwav"},
 		{src:"sounds/audio_BACKGROUNDTRACK_shortwav.mp3", id:"audio_BACKGROUNDTRACK_shortwav"},
-		{src:"sounds/audio_MORSENOTIFwav.mp3", id:"audio_MORSENOTIFwav"}
+		{src:"sounds/audio_INCOMINGASTEROIDwav.mp3", id:"audio_INCOMINGASTEROIDwav"},
+		{src:"sounds/audio_incoming_asteroid_shortwav.mp3", id:"audio_incoming_asteroid_shortwav"},
+		{src:"sounds/audio_MORSENOTIFwav.mp3", id:"audio_MORSENOTIFwav"},
+		{src:"sounds/audio_SINGLENOTIFICATIONwav.mp3", id:"audio_SINGLENOTIFICATIONwav"},
+		{src:"sounds/audio_SPRINGNOTIFwav.mp3", id:"audio_SPRINGNOTIFwav"},
+		{src:"sounds/talking_huh_1wav.mp3", id:"talking_huh_1wav"},
+		{src:"sounds/talking_justgreat_1wav.mp3", id:"talking_justgreat_1wav"},
+		{src:"sounds/talking_myscooter_1wav.mp3", id:"talking_myscooter_1wav"},
+		{src:"sounds/talking_somethingdestroyed_1wav.mp3", id:"talking_somethingdestroyed_1wav"},
+		{src:"sounds/talking_wait_1wav.mp3", id:"talking_wait_1wav"},
+		{src:"sounds/talking_wantascooter_1wav.mp3", id:"talking_wantascooter_1wav"},
+		{src:"sounds/talking_whatinthemotherboard_1wav.mp3", id:"talking_whatinthemotherboard_1wav"}
 	],
 	preloads: []
 };
