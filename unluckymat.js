@@ -37,7 +37,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_153 = function() {
+(lib.CachedBmp_78 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
@@ -345,7 +345,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_171 = function() {
+(lib.CachedBmp_84 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(27);
 }).prototype = p = new cjs.Sprite();
@@ -415,7 +415,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_170 = function() {
+(lib.CachedBmp_83 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(32);
 }).prototype = p = new cjs.Sprite();
@@ -443,7 +443,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_169 = function() {
+(lib.CachedBmp_82 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(36);
 }).prototype = p = new cjs.Sprite();
@@ -738,7 +738,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// text
-	this.instance = new lib.CachedBmp_153();
+	this.instance = new lib.CachedBmp_78();
 	this.instance.setTransform(0,0,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(3));
@@ -2149,7 +2149,7 @@ if (reversed == null) { reversed = false; }
 
 	// Layer_1
 	this.instance_2 = new lib.CachedBmp_26();
-	this.instance_2.setTransform(53.9,36.2,0.5,0.5);
+	this.instance_2.setTransform(53.9,16,0.5,0.5);
 
 	this.instance_3 = new lib.CachedBmp_25();
 	this.instance_3.setTransform(0,0,0.5,0.5);
@@ -3466,7 +3466,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_1 = new lib.ClipGroup();
 	this.instance_1.setTransform(285.75,269.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_2 = new lib.CachedBmp_171();
+	this.instance_2 = new lib.CachedBmp_84();
 	this.instance_2.setTransform(0.5,339.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -3524,7 +3524,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_2 = new lib.ClipGroup_1();
 	this.instance_2.setTransform(284.75,265.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_3 = new lib.CachedBmp_170();
+	this.instance_3 = new lib.CachedBmp_83();
 	this.instance_3.setTransform(-0.5,335.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
@@ -3587,7 +3587,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_6.setTransform(109.95,54.25,1,1,0,0,0,14.1,13.5);
 	this.instance_6.alpha = 0.4688;
 
-	this.instance_7 = new lib.CachedBmp_169();
+	this.instance_7 = new lib.CachedBmp_82();
 	this.instance_7.setTransform(99.3,51.25,0.5,0.5);
 
 	this.instance_8 = new lib.CachedBmp_18();
@@ -3757,7 +3757,7 @@ if (reversed == null) { reversed = false; }
 	var props = new Object();
 	props.mode = mode;
 	props.startPosition = startPosition;
-	props.labels = {};
+	props.labels = {notification_one:1};
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
@@ -4044,7 +4044,7 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	this.actionFrames = [78,80,1235];
+	this.actionFrames = [78,80];
 	// timeline functions:
 	this.frame_78 = function() {
 		this.stop();
@@ -4054,14 +4054,11 @@ if (reversed == null) { reversed = false; }
 		this.btn_play.addEventListener("click", function(){this.gotoAndPlay(80); stage.update();}.bind(this));
 	}
 	this.frame_80 = function() {
-		playSound("audio_BACKGROUNDTRACKwav",-1);
-	}
-	this.frame_1235 = function() {
-		playSound("audio_BACKGROUNDTRACKwav");
+		playSound("audio_BACKGROUNDTRACK_shortwav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(78).call(this.frame_78).wait(2).call(this.frame_80).wait(1155).call(this.frame_1235).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(78).call(this.frame_78).wait(2).call(this.frame_80).wait(1152));
 
 	// nav
 	this.btn_play = new lib.btn_play();
@@ -4070,7 +4067,7 @@ if (reversed == null) { reversed = false; }
 	this.btn_play._off = true;
 	new cjs.ButtonHelper(this.btn_play, 0, 1, 2);
 
-	this.timeline.addTween(cjs.Tween.get(this.btn_play).wait(78).to({_off:false},0).to({_off:true},1).wait(1157));
+	this.timeline.addTween(cjs.Tween.get(this.btn_play).wait(78).to({_off:false},0).to({_off:true},1).wait(1153));
 
 	// Layer_1
 	this.instance = new lib.FIRSTai("synched",0);
@@ -4103,7 +4100,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_9 = new lib._12ai();
 	this.instance_9.setTransform(300.4,396,1,1,0,0,0,306,396);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance}]},79).to({state:[{t:this.instance_1}]},103).to({state:[{t:this.instance_2}]},75).to({state:[{t:this.instance_3}]},129).to({state:[{t:this.instance_4}]},161).to({state:[{t:this.instance_5}]},90).to({state:[{t:this.instance_6}]},120).to({state:[{t:this.instance_7}]},120).to({state:[{t:this.instance_8}]},100).to({state:[{t:this.instance_9}]},121).to({state:[]},121).wait(17));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance}]},79).to({state:[{t:this.instance_1}]},103).to({state:[{t:this.instance_2}]},75).to({state:[{t:this.instance_3}]},129).to({state:[{t:this.instance_4}]},161).to({state:[{t:this.instance_5}]},90).to({state:[{t:this.instance_6}]},120).to({state:[{t:this.instance_7}]},120).to({state:[{t:this.instance_8}]},100).to({state:[{t:this.instance_9}]},121).to({state:[]},121).wait(13));
 	this.instance_5.addEventListener("tick", AdobeAn.handleFilterCache);
 	this.instance_6.addEventListener("tick", AdobeAn.handleFilterCache);
 
@@ -4114,7 +4111,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_11 = new lib.TITLECARD_static();
 	this.instance_11.setTransform(297.05,392.05,1,1,0,0,0,306.4,392.1);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_10}]}).to({state:[{t:this.instance_11}]},78).to({state:[]},1).to({state:[]},1153).wait(4));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_10}]}).to({state:[{t:this.instance_11}]},78).to({state:[]},1).wait(1153));
 
 	this._renderFirstFrame();
 
@@ -4140,7 +4137,7 @@ lib.properties = {
 		{src:"images/unluckymat_atlas_9.png", id:"unluckymat_atlas_9"},
 		{src:"images/unluckymat_atlas_10.png", id:"unluckymat_atlas_10"},
 		{src:"images/unluckymat_atlas_11.png", id:"unluckymat_atlas_11"},
-		{src:"sounds/audio_BACKGROUNDTRACKwav.mp3", id:"audio_BACKGROUNDTRACKwav"}
+		{src:"sounds/audio_BACKGROUNDTRACK_shortwav.mp3", id:"audio_BACKGROUNDTRACK_shortwav"}
 	],
 	preloads: []
 };
