@@ -345,7 +345,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_81 = function() {
+(lib.CachedBmp_84 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(27);
 }).prototype = p = new cjs.Sprite();
@@ -415,7 +415,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_80 = function() {
+(lib.CachedBmp_83 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(32);
 }).prototype = p = new cjs.Sprite();
@@ -443,7 +443,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_79 = function() {
+(lib.CachedBmp_82 = function() {
 	this.initialize(ss["unluckymat_atlas_8"]);
 	this.gotoAndStop(36);
 }).prototype = p = new cjs.Sprite();
@@ -2813,6 +2813,21 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	this.isSingleFrame = false;
+	// timeline functions:
+	this.frame_0 = function() {
+		if(this.isSingleFrame) {
+			return;
+		}
+		if(this.totalFrames == 1) {
+			this.isSingleFrame = true;
+		}
+		playSound("audio_runningwav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
 	// mat
 	this.instance = new lib.mat();
 	this.instance.setTransform(210,489.1,1,1,0,0,0,100.2,125);
@@ -3156,6 +3171,7 @@ if (reversed == null) { reversed = false; }
 
 	// timeline functions:
 	this.frame_0 = function() {
+		playSound("audio_INCOMINGASTEROIDwav");
 		playSound("talking_justgreat_1wav");
 	}
 
@@ -3529,7 +3545,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_1 = new lib.ClipGroup();
 	this.instance_1.setTransform(285.75,269.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_2 = new lib.CachedBmp_81();
+	this.instance_2 = new lib.CachedBmp_84();
 	this.instance_2.setTransform(0.5,339.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -3587,7 +3603,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_2 = new lib.ClipGroup_1();
 	this.instance_2.setTransform(284.75,265.3,1,1,0,0,0,306.2,397.9);
 
-	this.instance_3 = new lib.CachedBmp_80();
+	this.instance_3 = new lib.CachedBmp_83();
 	this.instance_3.setTransform(-0.5,335.05,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
@@ -3650,7 +3666,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_6.setTransform(109.95,54.25,1,1,0,0,0,14.1,13.5);
 	this.instance_6.alpha = 0.4688;
 
-	this.instance_7 = new lib.CachedBmp_79();
+	this.instance_7 = new lib.CachedBmp_82();
 	this.instance_7.setTransform(99.3,51.25,0.5,0.5);
 
 	this.instance_8 = new lib.CachedBmp_18();
@@ -4148,7 +4164,7 @@ if (reversed == null) { reversed = false; }
 		this.btn_play.addEventListener("click", function(){this.gotoAndPlay(80); stage.update();}.bind(this));
 	}
 	this.frame_80 = function() {
-		playSound("audio_BACKGROUNDTRACK_shortwav");
+		playSound("audio_BGtrack_quiet_shortwav");
 	}
 
 	// actions tween:
@@ -4220,31 +4236,32 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/unluckymat_atlas_1.png", id:"unluckymat_atlas_1"},
-		{src:"images/unluckymat_atlas_2.png", id:"unluckymat_atlas_2"},
-		{src:"images/unluckymat_atlas_3.png", id:"unluckymat_atlas_3"},
-		{src:"images/unluckymat_atlas_4.png", id:"unluckymat_atlas_4"},
-		{src:"images/unluckymat_atlas_5.png", id:"unluckymat_atlas_5"},
-		{src:"images/unluckymat_atlas_6.png", id:"unluckymat_atlas_6"},
-		{src:"images/unluckymat_atlas_7.png", id:"unluckymat_atlas_7"},
-		{src:"images/unluckymat_atlas_8.png", id:"unluckymat_atlas_8"},
-		{src:"images/unluckymat_atlas_9.png", id:"unluckymat_atlas_9"},
-		{src:"images/unluckymat_atlas_10.png", id:"unluckymat_atlas_10"},
-		{src:"images/unluckymat_atlas_11.png", id:"unluckymat_atlas_11"},
-		{src:"sounds/audio_ASTEROIDCRASHwav.mp3", id:"audio_ASTEROIDCRASHwav"},
-		{src:"sounds/audio_BACKGROUNDTRACK_shortwav.mp3", id:"audio_BACKGROUNDTRACK_shortwav"},
-		{src:"sounds/audio_INCOMINGASTEROIDwav.mp3", id:"audio_INCOMINGASTEROIDwav"},
-		{src:"sounds/audio_incoming_asteroid_shortwav.mp3", id:"audio_incoming_asteroid_shortwav"},
-		{src:"sounds/audio_MORSENOTIFwav.mp3", id:"audio_MORSENOTIFwav"},
-		{src:"sounds/audio_SINGLENOTIFICATIONwav.mp3", id:"audio_SINGLENOTIFICATIONwav"},
-		{src:"sounds/audio_SPRINGNOTIFwav.mp3", id:"audio_SPRINGNOTIFwav"},
-		{src:"sounds/talking_huh_1wav.mp3", id:"talking_huh_1wav"},
-		{src:"sounds/talking_justgreat_1wav.mp3", id:"talking_justgreat_1wav"},
-		{src:"sounds/talking_myscooter_1wav.mp3", id:"talking_myscooter_1wav"},
-		{src:"sounds/talking_somethingdestroyed_1wav.mp3", id:"talking_somethingdestroyed_1wav"},
-		{src:"sounds/talking_wait_1wav.mp3", id:"talking_wait_1wav"},
-		{src:"sounds/talking_wantascooter_1wav.mp3", id:"talking_wantascooter_1wav"},
-		{src:"sounds/talking_whatinthemotherboard_1wav.mp3", id:"talking_whatinthemotherboard_1wav"}
+		{src:"images/unluckymat_atlas_1.png?1711653673251", id:"unluckymat_atlas_1"},
+		{src:"images/unluckymat_atlas_2.png?1711653673251", id:"unluckymat_atlas_2"},
+		{src:"images/unluckymat_atlas_3.png?1711653673251", id:"unluckymat_atlas_3"},
+		{src:"images/unluckymat_atlas_4.png?1711653673251", id:"unluckymat_atlas_4"},
+		{src:"images/unluckymat_atlas_5.png?1711653673251", id:"unluckymat_atlas_5"},
+		{src:"images/unluckymat_atlas_6.png?1711653673251", id:"unluckymat_atlas_6"},
+		{src:"images/unluckymat_atlas_7.png?1711653673251", id:"unluckymat_atlas_7"},
+		{src:"images/unluckymat_atlas_8.png?1711653673253", id:"unluckymat_atlas_8"},
+		{src:"images/unluckymat_atlas_9.png?1711653673253", id:"unluckymat_atlas_9"},
+		{src:"images/unluckymat_atlas_10.png?1711653673253", id:"unluckymat_atlas_10"},
+		{src:"images/unluckymat_atlas_11.png?1711653673254", id:"unluckymat_atlas_11"},
+		{src:"sounds/audio_ASTEROIDCRASHwav.mp3?1711653673414", id:"audio_ASTEROIDCRASHwav"},
+		{src:"sounds/audio_BGtrack_quiet_shortwav.mp3?1711653673414", id:"audio_BGtrack_quiet_shortwav"},
+		{src:"sounds/audio_INCOMINGASTEROIDwav.mp3?1711653673414", id:"audio_INCOMINGASTEROIDwav"},
+		{src:"sounds/audio_incoming_asteroid_shortwav.mp3?1711653673414", id:"audio_incoming_asteroid_shortwav"},
+		{src:"sounds/audio_MORSENOTIFwav.mp3?1711653673414", id:"audio_MORSENOTIFwav"},
+		{src:"sounds/audio_runningwav.mp3?1711653673414", id:"audio_runningwav"},
+		{src:"sounds/audio_SINGLENOTIFICATIONwav.mp3?1711653673414", id:"audio_SINGLENOTIFICATIONwav"},
+		{src:"sounds/audio_SPRINGNOTIFwav.mp3?1711653673414", id:"audio_SPRINGNOTIFwav"},
+		{src:"sounds/talking_huh_1wav.mp3?1711653673414", id:"talking_huh_1wav"},
+		{src:"sounds/talking_justgreat_1wav.mp3?1711653673414", id:"talking_justgreat_1wav"},
+		{src:"sounds/talking_myscooter_1wav.mp3?1711653673414", id:"talking_myscooter_1wav"},
+		{src:"sounds/talking_somethingdestroyed_1wav.mp3?1711653673414", id:"talking_somethingdestroyed_1wav"},
+		{src:"sounds/talking_wait_1wav.mp3?1711653673414", id:"talking_wait_1wav"},
+		{src:"sounds/talking_wantascooter_1wav.mp3?1711653673414", id:"talking_wantascooter_1wav"},
+		{src:"sounds/talking_whatinthemotherboard_1wav.mp3?1711653673414", id:"talking_whatinthemotherboard_1wav"}
 	],
 	preloads: []
 };
